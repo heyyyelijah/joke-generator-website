@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JUST JOKING</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- font-family: 'Mountains of Christmas', cursive; -->
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&display=swap" rel="stylesheet">
+<!-- font-family: 'Love Ya Like A Sister', cursive; -->
+    <link href="https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&family=Mountains+of+Christmas:wght@700&display=swap" rel="stylesheet">
+<!-- font-family: 'Bungee Shade', cursive; -->
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+<!-- font-family: 'Atma', cursive; -->
+    <link href="https://fonts.googleapis.com/css2?family=Atma&display=swap" rel="stylesheet">
+</head>
+
+<body style="background-image: url('{{url_for('static', filename='/img/herringbone.png') }}');">
+
+    <section class="main-section">
+      <h1 class="title-question">choose a joke</h1>
+      <div class="joke-btns"></div>
+        <a href="{{ url_for('any_joke') }} ">RANDOM</a>
+        <a href="{{ url_for('pun_joke') }} ">PUN</a>
+        <a href="{{ url_for('dark_joke') }} ">DARK</a>
+        <a href="{{ url_for('pc_joke') }} ">PROGRAMMING</a>
+        <a href="{{ url_for('spooky_joke') }} ">SPOOKY</a>
+        <a href="{{ url_for('xmas_joke') }}">CHRISTMAS</a>
+      <br>
+      <div class="joke-section">
+      {% if r and r.type == 'twopart' %}
+        <h1>{{ r.setup }}</h1>
+        <br>
+        <h1>{{ r.delivery }}</h1>
+        <br>
+        {% elif r and r.type == 'single' %}
+        <h1>{{ r.joke }}</h1>
+        {% endif %}
+      </div>
+    </section>
+
+</body>
+
+</html>

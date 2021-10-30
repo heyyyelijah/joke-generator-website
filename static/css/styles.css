@@ -1,0 +1,31 @@
+
+.main-section {
+    margin: 5% 10%;
+    text-align: center;
+}
+
+.title-question {
+    font-family: 'Bungee Shade', cursive;
+    font-size: 4rem;
+}
+
+.title-question:hover {
+    color: #39A388;
+}
+.joke-btns, a {
+    margin: 3%;
+    padding: 5% auto;
+    font-family: 'Love Ya Like A Sister', cursive;
+    font-size: 2rem;
+    color: black;
+}
+
+.joke-btns, a:hover {
+    color: #6D9886;
+}
+
+.joke-section {
+    font-size: 1.5rem;
+    margin-top: 7%;
+    font-family: 'Atma', cursive;
+}
